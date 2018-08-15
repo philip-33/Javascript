@@ -1,0 +1,1 @@
+console.log("For this class, I hope to lay the foundations of a successful career in software development while working with and helping others who share an interest in coding, learning, and assisting others in reaching their goals");
