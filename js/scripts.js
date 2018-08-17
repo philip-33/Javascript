@@ -44,3 +44,4 @@ const rand = Math.floor((Math.random() * 10) + 1);
 //accepts a user's input
 let name = prompt('Please enter your name:');
 alert(name);
+//this is a test note for day 2 testing
