@@ -57,10 +57,78 @@ alert(name);
 // < LT
 // >= GT or Eq
 // <= LT or Eq
-
-if (1 === 1) {
+/* 
+const userInput = prompt('Please enter a number:');
+if (1 == userInput) {
     console.log("I am here");
     //console.log(!true);
 } else {
     console.log("In the else")
-}
+} */
+
+//day 3 - logical operators
+//const userInput = prompt('Please enter a number:');
+/* if (userInput/3 == 0 || userInput/5 == 0) {
+    console.log('I am here');
+} else {
+    console.log('In the else');
+} */
+/* if (userInput > 5 && userInput < 10) {
+    console.log('I am here')
+} else {
+    console.log('In the else');
+} */ 
+/* if (userInput === '' || userInput === null) {
+    console.log('User input NOTHING');
+} else if (userInput > 5) {
+    console.log('number is > 5');
+} else if (userInput < 5) {
+    console.log('number is < 5');
+} else if (userInput == 5) {
+    console.log('number is = 5');
+} else {
+    console.log(`User didn't enter a number, they entered ${userInput}.`);
+} */
+
+//day3 - switch
+// const today = new Date().getDay();
+// // console.log(today);
+// switch (today) {
+//     case 0:
+//         console.log('Dies Solis');
+//         break;
+//     case 1:
+//         console.log('Monandæg');
+//         break;
+//     case 2:
+//         console.log('Tyr\'s Day');
+//         break;
+//     case 3:
+//         console.log('Wodansday');
+//         break;
+//     case 4:
+//         console.log('Torsdag');
+//         break;
+//     case 5:
+//         console.log('Frigedag');
+//         break;
+//     case 6:
+//         console.log('Lørdag');
+//         break;
+// }
+
+// const addition = 1 + 1;
+// const subtraction = 2 - 1;
+// const multiplication = 2 * 2;
+// const division = 10 / 2;
+// const remainder = 11 % 3;
+
+let myNum = 1;
+// myNum++; //This incremenr has to be done separately, it can't be done in the console log
+// myNum--; //Dexcrement!
+// console.log(myNum = myNum + 1); //but this is quite all right
+myNum += 3;
+myNum -= 10; //this mechanic is available for all standard arithmetic operators
+myNum *= 5;
+myNum /= 12;
+console.log(myNum);
