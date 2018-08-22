@@ -1,46 +1,55 @@
-// Log to the console a string that says "Hello World!"
-//console.log("Hello World!");
+//prompt for name
+let userName = prompt("Hello! What is your name?");
 
-//Day 2 - Variables and console.log
-//var myName = "Philip";
-//var myAge = 39;
-//var is the ES5 way. Loosely typed, is mutable
-const myName = "Philip";
-let myAge = 39;
-//this is the ES5 way
-//console.log("Hello, " + myName + "! You are " + myAge + " years old.");
-//console.log(myAge);
+//start a structure that will repeat until the user enters an allowed color
+let finished = 0;
+while (finished != 1) {
+    //ask for favorite color
+    let favColor = prompt("Alrighty, from Red, Orange, Yellow, Green, Blue, Pink, Purple, Black, White, and Grey, which is your favorite?");
+    //display text for each acceptable color
+    switch (favColor) {
+        case 'Red':
+            alert(`Aha! An excellent choice, ${userName}, the colors of fire and blood.`);
+            finished = 1;
+            break;
+        case 'Orange':
+            alert(`Interesting choice, ${userName}. This color is seen in fruits whose names do not rhyme with anything else.`);
+            finished = 1;
+            break;
+        case 'Yellow':
+            alert(`A wonderful color. This color represents sunshine and warmth worldwide. Is it the same for you, ${userName}?`);
+            finished = 1;
+            break;
+        case 'Green':
+            alert(`Is this really your favorite? This is the color of nature. Is that why you like it, ${userName}?`);
+            finished = 1;
+            break;
+        case 'Blue':
+            alert(`This is my favorite color too! We're a lot alike, except I'm a program and youre ${userName}.`);
+            finished = 1;
+            break;
+        case 'Pink':
+            alert(`Like it or not, ${userName}, this is a girly color these days. It used to be considered very masculine, though.`);
+            finished = 1;
+            break;
+        case 'Purple':
+            alert(`Feeling fancy, ${userName}? This, without a doubt, is the color of royalty and Jedi Master Mace Windu's lightsaber.`);
+            finished = 1;
+            break;
+        case 'Black':
+            alert(`Darkness and the unknown are characterized by this color. You sure are edgy, ${userName}.`);
+            finished = 1;
+            break;
+        case 'White':
+            alert(`Purity, and yet also the mixture of all colors together if we're talking about light. Are you as confused as I am, ${userName}?`);
+            finished = 1;
+            break;
+        case 'Gray':
+            alert(`A cloudy day, and when things aren't black or white anymore. Do either of those things sound good to you ${userName}?`);
+            finished = 1;
+            break;                                    
+        default:
+            alert(`Not that I don't believe you, but this is a small program, ${userName}. Work with me and pick one of the colors I provided.`);
+    }
 
-// Log to the console with the ES6 way
-console.log(`Hello, ${myName}! You are ${myAge} years old.`)
-
-//Day 2 - Date
-const today = new Date();
-let day = today.getDate();
-let month = today.getMonth() + 1; //months start the count at 0
-//let year = today.getYear() + 1900; //years start the count at 1900
-let year = today.getFullYear();
-let hour = today.getHours();
-let minute = today.getMinutes();
-let second = today.getSeconds();
-//console.log(today);
-//console.log("Date: ", day, month, year, " - ", hour, ":", minute, ":", second);
-console.log(`${month}/${day}/${year} - ${hour}:${minute}:${second}`);
-
-//day 2 - Math
-// gets random number between 0 and 1
-//const rand = Math.random();
-
-//give us a random #, multiply by 10. Add 1 to avoid 0, then round down
-const rand = Math.floor((Math.random() * 10) + 1);
-//console.log(rand);
-
-//simple popup
-//alert(rand);
-
-//user clicks cancel or ok
-//confirm(rand);
-
-//accepts a user's input
-let name = prompt('Please enter your name:');
-alert(name);
+}
