@@ -1,7 +1,7 @@
 // prompt for an array of stuff to do this weekend
-let taskOne = prompt("What is one task to do this weekend?");
-let taskTwo = prompt("What is a second task to finish this weekend?");
-let taskThree = prompt("What is a third and final task to complete this weekend?");
+let taskOne = prompt("What is one task to do this weekend?", "Eat Cheese."); //second item is the default value if nothing is entered
+let taskTwo = prompt("What is a second task to finish this weekend?", "Dismantle the patriarchy.");
+let taskThree = prompt("What is a third and final task to complete this weekend?", "Wax my vegetables.");
 let myTasks = [taskOne, taskTwo, taskThree];
 console.log(myTasks);
 console.log(myTasks.length)
