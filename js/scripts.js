@@ -7,17 +7,24 @@ function squares() { //function to return square of a number
     return inputNum * inputNum; // return square
 };
 
-//
 alert(squares());
 
-let inputSentence = prompt('Please enter a sentence.', 'jackdaws love my big sphinx of quartz');
-function toSentence(inputSentence) { //function to turn input into sentence case
-    inputSentence[0].toUppercase(); //uppercase the first letter
-    if ((inputSentence[inputSentence.length-1]) != '.') {
-        inputSentence.push('.');
-    }
-    console.log(inputSentence);
-    return inputSentence;
-}
 
-alert(toSentence());
+// console.log(inputSentence.charAt(0));  //core logic tests. All good!
+// console.log(inputSentence.charAt(0).toUpperCase());
+// console.log(inputSentence.charAt(inputSentence.length-1));
+
+function toSentence(inputString) { //function to turn input into sentence case
+    console.log(inputString);
+    console.log(inputSentence.charAt(0).toUpperCase()); //uppercase the first letter
+    // console.log(capFirstLetter);
+    // console.log(inputString);
+    // if ((inputString.charAt(inputString.length-1)) != '.') {
+    //     inputString.push('.');
+    // }
+    // console.log(inputString);
+    // return inputString;
+};
+
+let inputString = prompt('Please enter a sentence.', 'jackdaws love my big sphinx of quartz');
+alert(toSentence(inputString));
