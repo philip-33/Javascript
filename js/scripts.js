@@ -15,16 +15,16 @@ alert(squares());
 // console.log(inputSentence.charAt(inputSentence.length-1));
 
 function toSentence(inputString) { //function to turn input into sentence case
-    console.log(inputString);
-    console.log(inputSentence.charAt(0).toUpperCase()); //uppercase the first letter
-    // console.log(capFirstLetter);
-    // console.log(inputString);
-    // if ((inputString.charAt(inputString.length-1)) != '.') {
-    //     inputString.push('.');
-    // }
-    // console.log(inputString);
-    // return inputString;
-};
+    let firstLetter = inputString.slice(0,1); //pull the first letter off the string
+    firstLetter = firstLetter.toUpperCase(); //uppercase that first letter, regardless of actual case
+    inputString = inputString.slice(1); //cut the first letter off the rest of the string
+    inputString = firstLetter + inputString; //attach the uppercase letter to the modded string
 
+    if ((inputString.charAt(inputString.length-1)) != '.') { //If statement to check for a '.'
+        inputString = inputString + '.'; //add a '.' if it's not already there
+    }
+    return inputString; //throw the new string back
+};
+// get a string and pass it to the function
 let inputString = prompt('Please enter a sentence.', 'jackdaws love my big sphinx of quartz');
 alert(toSentence(inputString));
