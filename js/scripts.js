@@ -1,80 +1,64 @@
-//FUNCTIONS
+let pTags = document.getElementsByTagName("p"); 
+//Returns an array
 
-// Anonymous functions don't have a "name"
-// function(name, age) {
-//     return `My name is ${name} and I am ${age} years old.`;
-// }; //this whole block is a "Function Definition" and it does nothing until the function is called
+let specialPTag = document.getElementsByClassName("my-spectial-p-tag"); 
+//Returns an array
 
-// //Named Functions
-// function getTodos(question) {
-//     todos.push(prompt(question));
-// }; //function DEFINITION
+let thisPTag = document.getElementById("this_p_tag"); 
+//Returns 1 DOM node
 
-// // getTodos("What is thing 1?");
-// // //function call site
+let h1Tags = document.querySelectorAll("h1");
+//Returns all h1 tags
 
-// nameThatBand("Coldplay");
+let queryPTags = document.querySelectorAll(".my-special-p-tag");
+//this searches ALL tags/classes/IDs, and returns whatever matches the string, in this case the . makes it look for a class with the name
 
-// function nameThatBand(bandName) { //function declaration
-//     return alert(`${bandName} is overrated`);
-// };
+let idPTags = document.querySelectorAll("#this_p_tag");
+//this is another example of the querySelectorAll that is set to use IDs because of the #
 
-// let incrememntor = 0;
-// let sayHello = function() { //function expression
-//    if(incrememntor > 5){
-//        alert("Hello");
-//        incrememntor++;
-//        sayHello();
-//    } else {
-//        return;
-//    }
+document.querySelector(".text-danger");
 
-// }
-// // sayHello();
+function queryMyDOM(elementType, tag) {
+    let tagArray;
+    switch(elementType) {
+        case "getElementsByTagName": tagArray = document.getElementsByTagName(tag);
+        break;
+        case "getElementsByClassName": tagArray = document.getElementsByClassName(tag);
+        break;
+        case "getElementById": tagArray = document.getElementById(tag);
+        break;
+        default: result = "sorry, that's not valid.";
+    }
+    console.log(tagArray);
+    return tagArray;
+}
 
-// // "FAT" Arrow FUNCTIONS
-// //() => ();  //POINTLESS but basic form
+console.log(queryMyDOM("getElementsByTagName", "h1"));
 
-// // () => { //arrow function that takes 0 args and performs data manip
-// //     incrememntor++;
-// //     if(incrememntor < 5) {
-// //         sayHello();
-// //     }
-// //     //return is optional here
-// // };
- 
-// pasta => {  //parens optional with 1 arg
-//     alert(`My fav pasta is ${pasta}!`);
-// }
+let redDiv = document.querySelector(".red-background");
 
-// pasta => (pasta.toUpperCase());
+//this block changes the color of the red background div to blue while the mouse is over it
+//examine for proper code flow, this is how it looks when professionals do it (except for the inline style tag...)
+let count = 0;
+redDiv.addEventListener(
+    "mouseover", 
+    e => {
+        if(count < 10) { //fun little count that requires 10 mouseovers before changing the background color
+            count++;
+        } else {
+            redDiv.style.backgroundColor = "blue";
+            redDiv.addEventListener("mouseleave", e => {
+                redDiv.style.backgroundColor = "red";
+            })
+        }
+    }
+);
 
-// //if only returning values, parens are fine.
-// //if doing work, curly braces are necessary
-// (car, house) => {  
-//     return `The returned info is ${data};`
-// };
+let input = document.querySelector("#my_input");
 
-// //TRYITOUT - calculate a dogs age
-
-// //accept one argument (age of the dog in years)
-
-// function dogAgeInHumanYears() {
-//     var dogAge = NaN;
-//     while (isNaN(dogAge)) {
-//         dogAge = parseInt(prompt("Enter the age of the dog in numbers!"));
-//     }
-//     return (dogAge * 7);
-// };
-
-// alert(dogAgeInHumanYears());
-// //return the age of the dog (1:7)
-
-// //alert the answer
-
-// //check for edge cases (not a number?)
-
-// //TRYITOUT 2
-// parseInt();
-// console.log("phil".toUpperCase());
-
+input.addEventListener(
+    "keydown", 
+    e => {
+        console.log(e.keyCode);
+    }
+);
