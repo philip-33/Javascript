@@ -28,3 +28,22 @@ function toSentence(inputString) { //function to turn input into sentence case
 // get a string and pass it to the function
 let inputString = prompt('Please enter a sentence.', 'jackdaws love my big sphinx of quartz');
 alert(toSentence(inputString));
+
+function reverseHalves(string) {
+    let halfIndex = Math.ceil(string.length /2);
+    let firstHalf = string.substring(0, halfIndex);
+    let secondHalf = string.substring(halfIndex, string.length);
+    alert(`${secondHalf}${firstHalf}`);
+}
+
+let string = "Hello World";
+reverseHalves(string);
+
+function isPalindrome(string) {
+    let reversed = string
+                    .split('')
+                    .reverse('')
+                    .join('');
+    return string === reversed;
+}
+alert(isPalindrome('tacocat'));
