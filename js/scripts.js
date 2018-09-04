@@ -15,6 +15,7 @@
         temp = ((temp * (9/5)) + 32);
         scale = 'f';
     }
+    return scale, temp;
  }
 
 
