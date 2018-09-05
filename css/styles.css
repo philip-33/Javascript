@@ -1,5 +1,9 @@
-h3 {
-    background-color: grey;
+.tempDisplay {
     font-family: sans-serif;
+    text-align: center;
+    background-color: gray;
     color: black;
+    display: block;
+    width: 200px;
+    height: 200px;
 }
