@@ -104,4 +104,5 @@ function fizzBuzz(count, val1, val2) {
     body.insertBefore(list, script);
 }
 
-fizzBuzz(1800, 24, 12);
+// fizzBuzz(1800, 24, 12);
+
