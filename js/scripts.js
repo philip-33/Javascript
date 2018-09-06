@@ -81,28 +81,26 @@ console.log(functionName());
 myFunc();
 
 //FizzBuzz function including generating on the page 
-function fizzBuzz() {
+function fizzBuzz(count, val1, val2) {
     let list = document.createElement("ol"); //starts ordered list element
     //all the following cases generate additional <li> tags and populate it with the approrpriate tag
     for (var i = 1; i <= 100; i++) {
+        let res = document.createElement("li");
         if (i % 15 == 0) {
             console.log("FizzBuzz");
-            let res = document.createElement("li");
             res.textContent = "FizzBuzz";
             list.appendChild(res);
         } else if (i % 3 == 0) {
             console.log("Fizz");
-            let res = document.createElement("li");
             res.textContent = "Fizz";
             list.appendChild(res);
         } else if (i % 5 == 0) {
             console.log("Buzz");
-            let res = document.createElement("li");
             res.textContent = "Buzz";
             list.appendChild(res);
         } else {
             console.log(i);
-            let res = document.createElement("li");
+            
             res.textContent = i;
             list.appendChild(res);
         }
