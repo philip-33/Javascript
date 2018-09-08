@@ -106,3 +106,60 @@ function fizzBuzz(count, val1, val2) {
 
 // fizzBuzz(1800, 24, 12);
 
+// let messageForm = document.forms.messageForm; //both of these lines use the "name" of the element to get the data
+// let message = messageForm["msg"]; // can also be:    let message = messageForm.msg
+// console.log(messageForm);
+// console.log(message);
+
+messageForm.addEventListener("submit", e => {
+    e.preventDefault(); //  This line stops the default action from happening. In this case, submitting data to a server
+    let list = document.getElementById("list");     // dom variables at the top
+    let newMessage = document.createElement("Li");
+    let message = e.target["msg"].value;            // followed by event variables
+    newMessage.textContent = message;
+    list.insertBefore(newMessage, list.childNodes[0]);
+    messageForm.reset();
+})
+
+function generateList() {
+    let fullList = [
+        'First',
+        'Second',
+        'Third',
+        'Fourth'
+    ];
+    let list = document.getElementById("list");
+    for (var i = 0; i < fullList.length; i++) {
+        let msg = document.createElement("li");
+        msg.textContent = fullList[i];
+        msg.id = `item-${i + 1}`;
+        list.appendChild(msg);
+    }
+}
+
+generateList();
+
+// DON'T USE ONCLICK WITH PLAIN JAVASCRIPT
+// function submitForm() {
+//     console.log(document.getElementById("message").value);
+// }
+
+// var name = "Phil";
+// var age = 39;
+// var currentClass = "JavaScript";
+// console.log(this.currentClass);
+
+// function aboutMe() {
+//     let me = {
+//         firstName: 'Phil',
+//         lastName: 'M.',
+//         age: 39,
+//         currentClass: "JavaScript",
+//         fullName: function() {     //this has to be a function to corral the scope, it turns the variables above into "parent" scope
+//             return `${this.firstName} ${this.lastName}`
+//         }
+//     }
+//     console.log(me.fullName());
+// }
+// aboutMe();
+
