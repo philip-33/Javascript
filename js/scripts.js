@@ -112,11 +112,41 @@ function getRepos() {
     }).then(repos => {
         let repoList = document.getElementById("myRepos");
         repos.forEach(repo => { //use the singular for the element (repos -> repo)
+            if (repo.name === "Pshell") { return; } // skips over the repo!
             let temp = document.createElement("li");
+            let paragraph = document.createElement("p");
+            let link = document.createElement("a");
             temp.setAttribute("class", "list-group-item");
+            paragraph.textContent = repo.name;
+            link.textContent = "View";
+            link.setAttribute("href", repo.html_url);
+            link.setAttribute("target", "_blank");
+            temp.appendChild(paragraph);
+            temp.appendChild(link);
+            console.log(temp);
             repoList.appendChild(temp);
         });
     })
 }
 
 getRepos();
+
+class User {
+    constructor(name) { //this runs when a class is "new'd"
+        this.name = name;
+    }
+    sayHello() {
+        alert(this.name);
+    }
+}
+
+let subaru = new User("Archie");
+subaru.sayHello();
+// push LI into list with just text
+// get list of li's: let todoListItems = document.getElementsById("listItems");
+// add checkbox to the front of each li with loop
+// add delete and edit buttons to end of each li with loop
+// create 3 event listeners with onclicks (check out addeventlistener first)
+// on click for complete: strikethrough text
+// on click for edit: prompt for new text!
+// on click for delete: style: none;
