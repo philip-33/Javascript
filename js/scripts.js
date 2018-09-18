@@ -104,4 +104,19 @@
 // //SCOOOPING oooOOOOOOOOOOOOOOoooooooooooooooooooooo.......
 // getNumber();
 
-// Day 11 - Fetch / objects (Advanced) / JS classes /
+// Day 11 - Fetch / objects (Advanced) / JS classes
+
+function getRepos() {
+    return fetch('https://api.github.com/users/philip-33/repos').then(data => {
+        return data.json();
+    }).then(repos => {
+        let repoList = document.getElementById("myRepos");
+        repos.forEach(repo => { //use the singular for the element (repos -> repo)
+            let temp = document.createElement("li");
+            temp.setAttribute("class", "list-group-item");
+            repoList.appendChild(temp);
+        });
+    })
+}
+
+getRepos();
